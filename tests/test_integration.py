@@ -96,6 +96,7 @@ async def test_petrol_car(hass: HomeAssistant, client) -> None:
     assert hass.states.get("binary_sensor.octavia_sunroof") is None
     assert hass.states.get("button.octavia_start_auxiliary_heating") is not None
     assert hass.states.get("button.octavia_start_climate_control") is None
+    assert hass.states.get("image.octavia_picture") is not None
 
     await hass.services.async_call(
         "button", "press", {"entity_id": "button.octavia_start_auxiliary_heating"}, blocking=True

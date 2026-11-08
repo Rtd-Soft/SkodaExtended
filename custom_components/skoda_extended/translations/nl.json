@@ -299,6 +299,11 @@
       "position": {
         "name": "Positie"
       }
+    },
+    "image": {
+      "render": {
+        "name": "Afbeelding"
+      }
     }
   },
   "exceptions": {
