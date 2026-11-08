@@ -25,6 +25,8 @@ Knoppen (alleen als de auto de opdracht ondersteunt): gegevens verversen, klimaa
 
 **Handmatig (werkt altijd, ook met een privé repo):** kopieer `custom_components/skoda_extended` naar `/config/custom_components/` en herstart HA.
 
+Het Škoda-logo staat in `brand/` en verschijnt vanaf HA 2026.3 vanzelf bij de integratie (licht en donker thema). Zie je nog een leeg vakje na een update: herstart HA en ververs de browser hard (Ctrl+F5), want brand-afbeeldingen worden gecachet.
+
 ## Instellen
 
 1. MyŠkoda-app > **Profiel > Smart Home** > maak een API-sleutel voor je auto (kopieer hem meteen, je ziet hem maar één keer).
