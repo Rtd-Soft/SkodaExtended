@@ -5,10 +5,10 @@
     "@erikpuntnl"
   ],
   "config_flow": true,
-  "documentation": "https://github.com/erikpuntnl/SkodaExtended",
+  "documentation": "https://github.com/Rtd-Soft/SkodaExtended",
   "integration_type": "device",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/erikpuntnl/SkodaExtended/issues",
+  "issue_tracker": "https://github.com/Rtd-Soft/SkodaExtended/issues",
   "requirements": [
     "skoda-public-api==1.4.0"
   ],
