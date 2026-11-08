@@ -1,0 +1,315 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect your Škoda",
+        "description": "Create an API key in the MyŠkoda app under Profile > Smart Home ({url}) and enter it together with the VIN.",
+        "data": {
+          "vin": "Vehicle identification number (VIN)",
+          "api_key": "API key"
+        }
+      },
+      "reauth_confirm": {
+        "title": "New API key",
+        "description": "The API key has expired or was revoked. Create a new one in the MyŠkoda app ({url}).",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "The API key is invalid or has expired.",
+      "vin_not_authorized": "This API key does not cover this VIN.",
+      "rate_limited": "Rate limit reached (20 requests per hour). Try again later.",
+      "cannot_connect": "Could not reach the Škoda API.",
+      "invalid_vin": "A VIN has 17 characters."
+    },
+    "abort": {
+      "already_configured": "This vehicle is already configured.",
+      "reauth_successful": "API key updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "description": "The API allows 20 requests per hour per car. Every poll, refresh and command uses one.",
+        "data": {
+          "scan_interval": "Polling interval",
+          "spin": "S-PIN (only needed for the auxiliary heater)",
+          "aux_heating_duration": "Auxiliary heating duration"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "mileage": {
+        "name": "Mileage"
+      },
+      "fuel_level": {
+        "name": "Fuel level"
+      },
+      "total_range": {
+        "name": "Total range"
+      },
+      "combustion_range": {
+        "name": "Fuel range"
+      },
+      "electric_range": {
+        "name": "Electric range"
+      },
+      "adblue_range": {
+        "name": "AdBlue range"
+      },
+      "car_type": {
+        "name": "Powertrain"
+      },
+      "lock_state": {
+        "name": "Lock status",
+        "state": {
+          "yes": "Locked",
+          "no": "Unlocked",
+          "trunk_opened": "Trunk open",
+          "opened": "Door open"
+        }
+      },
+      "parking_address": {
+        "name": "Parking address"
+      },
+      "movement_state": {
+        "name": "Movement",
+        "state": {
+          "in_motion": "Driving",
+          "parked": "Parked"
+        }
+      },
+      "air_conditioning_state": {
+        "name": "Climate control",
+        "state": {
+          "off": "Off",
+          "cooling": "Cooling",
+          "heating": "Heating",
+          "heating_auxiliary": "Auxiliary heating",
+          "ventilation": "Ventilation",
+          "completed": "Completed"
+        }
+      },
+      "air_conditioning_target_temperature": {
+        "name": "Climate target temperature"
+      },
+      "air_conditioning_target_reached_at": {
+        "name": "Climate target reached at"
+      },
+      "auxiliary_heating_state": {
+        "name": "Auxiliary heating",
+        "state": {
+          "heating": "Heating",
+          "ventilation": "Ventilation",
+          "off": "Off",
+          "preheating": "Preheating",
+          "heating_auxiliary": "Auxiliary heating"
+        }
+      },
+      "auxiliary_heating_mode": {
+        "name": "Auxiliary heating mode",
+        "state": {
+          "heating": "Heating",
+          "ventilation": "Ventilation"
+        }
+      },
+      "auxiliary_heating_duration": {
+        "name": "Auxiliary heating duration"
+      },
+      "auxiliary_heating_target_temperature": {
+        "name": "Auxiliary heating target temperature"
+      },
+      "auxiliary_heating_target_reached_at": {
+        "name": "Auxiliary heating ready at"
+      },
+      "ventilation_state": {
+        "name": "Ventilation",
+        "state": {
+          "ventilation": "Ventilation",
+          "preheating": "Preheating",
+          "off": "Off"
+        }
+      },
+      "ventilation_duration": {
+        "name": "Ventilation duration"
+      },
+      "battery_level": {
+        "name": "Battery"
+      },
+      "charging_state": {
+        "name": "Charging state",
+        "state": {
+          "connect_cable": "Connect cable",
+          "charging": "Charging",
+          "conserving": "Conserving",
+          "ready_for_charging": "Ready for charging",
+          "discharging": "Discharging",
+          "charging_interrupted": "Charging interrupted"
+        }
+      },
+      "charge_type": {
+        "name": "Charge type",
+        "state": {
+          "ac": "AC",
+          "dc": "DC",
+          "off": "Off"
+        }
+      },
+      "charging_power": {
+        "name": "Charging power"
+      },
+      "charging_rate": {
+        "name": "Charging rate"
+      },
+      "fully_charged_at": {
+        "name": "Fully charged at"
+      },
+      "charge_remaining_time": {
+        "name": "Time to full charge"
+      },
+      "plug_state": {
+        "name": "Plug",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected"
+        }
+      },
+      "charge_limit": {
+        "name": "Charge limit"
+      },
+      "charge_mode": {
+        "name": "Charge mode",
+        "state": {
+          "manual": "Manual",
+          "timer": "Timer",
+          "timer_charging_with_climatisation": "Timer with climate",
+          "preferred_charging_times": "Preferred times",
+          "only_own_current": "Own power only",
+          "immediate_discharging": "Immediate discharging",
+          "home_storage_charging": "Home storage"
+        }
+      },
+      "max_charge_current": {
+        "name": "Max AC charge current"
+      },
+      "license_plate": {
+        "name": "License plate"
+      },
+      "last_captured": {
+        "name": "Last update from car"
+      },
+      "rate_limit_remaining": {
+        "name": "API requests left"
+      },
+      "api_key_expires": {
+        "name": "API key expires"
+      },
+      "api_errors": {
+        "name": "API partial-data errors"
+      }
+    },
+    "binary_sensor": {
+      "lock": {
+        "name": "Lock"
+      },
+      "doors": {
+        "name": "Doors"
+      },
+      "windows": {
+        "name": "Windows"
+      },
+      "trunk": {
+        "name": "Trunk"
+      },
+      "bonnet": {
+        "name": "Bonnet"
+      },
+      "sunroof": {
+        "name": "Sunroof"
+      },
+      "lights": {
+        "name": "Lights"
+      },
+      "parked": {
+        "name": "Parked"
+      },
+      "window_heating_front": {
+        "name": "Front window heating"
+      },
+      "window_heating_rear": {
+        "name": "Rear window heating"
+      },
+      "window_heating_enabled": {
+        "name": "Window heating with climate"
+      },
+      "air_conditioning_at_unlock": {
+        "name": "Climate at unlock"
+      },
+      "air_conditioning_without_external_power": {
+        "name": "Climate without external power"
+      },
+      "charging": {
+        "name": "Charging"
+      },
+      "plug_connected": {
+        "name": "Plug connected"
+      },
+      "at_saved_location": {
+        "name": "At saved charging location"
+      }
+    },
+    "button": {
+      "refresh": {
+        "name": "Refresh data"
+      },
+      "start_air_conditioning": {
+        "name": "Start climate control"
+      },
+      "stop_air_conditioning": {
+        "name": "Stop climate control"
+      },
+      "start_auxiliary_heating": {
+        "name": "Start auxiliary heating"
+      },
+      "start_auxiliary_ventilation": {
+        "name": "Start auxiliary ventilation"
+      },
+      "stop_auxiliary_heating": {
+        "name": "Stop auxiliary heating"
+      },
+      "start_ventilation": {
+        "name": "Start ventilation"
+      },
+      "stop_ventilation": {
+        "name": "Stop ventilation"
+      },
+      "start_charging": {
+        "name": "Start charging"
+      },
+      "stop_charging": {
+        "name": "Stop charging"
+      }
+    },
+    "device_tracker": {
+      "position": {
+        "name": "Position"
+      }
+    }
+  },
+  "exceptions": {
+    "spin_required": {
+      "message": "Set your S-PIN in the integration options to use the auxiliary heater."
+    },
+    "rate_limited": {
+      "message": "The hourly API quota is used up; try again later."
+    },
+    "command_failed": {
+      "message": "The car did not accept the command: {error}"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "domain": "skoda_extended",
+  "name": "Škoda Extended",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://public.api.connect.skoda-auto.cz/docs",
+  "integration_type": "device",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://public.api.connect.skoda-auto.cz/docs",
+  "requirements": ["skoda-public-api==1.4.0"],
+  "version": "1.0.0"
+}

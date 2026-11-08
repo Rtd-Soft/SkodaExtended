@@ -1,0 +1,315 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Koppel je Škoda",
+        "description": "Maak in de MyŠkoda-app een API-sleutel aan onder Profiel > Smart Home ({url}) en vul die samen met het VIN in.",
+        "data": {
+          "vin": "Voertuigidentificatienummer (VIN)",
+          "api_key": "API-sleutel"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Nieuwe API-sleutel",
+        "description": "De API-sleutel is verlopen of ingetrokken. Maak een nieuwe aan in de MyŠkoda-app ({url}).",
+        "data": {
+          "api_key": "API-sleutel"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "De API-sleutel is ongeldig of verlopen.",
+      "vin_not_authorized": "Deze API-sleutel hoort niet bij dit VIN.",
+      "rate_limited": "Limiet bereikt (20 verzoeken per uur). Probeer het later opnieuw.",
+      "cannot_connect": "De Škoda-API is niet bereikbaar.",
+      "invalid_vin": "Een VIN heeft 17 tekens."
+    },
+    "abort": {
+      "already_configured": "Deze auto is al ingesteld.",
+      "reauth_successful": "API-sleutel bijgewerkt."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opties",
+        "description": "De API staat 20 verzoeken per uur per auto toe. Elke ophaalronde, verversing en opdracht kost er één.",
+        "data": {
+          "scan_interval": "Ophaalinterval",
+          "spin": "S-PIN (alleen nodig voor de standkachel)",
+          "aux_heating_duration": "Standkachel-duur"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "mileage": {
+        "name": "Kilometerstand"
+      },
+      "fuel_level": {
+        "name": "Brandstofniveau"
+      },
+      "total_range": {
+        "name": "Totale actieradius"
+      },
+      "combustion_range": {
+        "name": "Actieradius brandstof"
+      },
+      "electric_range": {
+        "name": "Elektrische actieradius"
+      },
+      "adblue_range": {
+        "name": "AdBlue-actieradius"
+      },
+      "car_type": {
+        "name": "Aandrijving"
+      },
+      "lock_state": {
+        "name": "Vergrendelstatus",
+        "state": {
+          "yes": "Vergrendeld",
+          "no": "Ontgrendeld",
+          "trunk_opened": "Kofferbak open",
+          "opened": "Deur open"
+        }
+      },
+      "parking_address": {
+        "name": "Parkeeradres"
+      },
+      "movement_state": {
+        "name": "Beweging",
+        "state": {
+          "in_motion": "Rijdt",
+          "parked": "Geparkeerd"
+        }
+      },
+      "air_conditioning_state": {
+        "name": "Klimaatregeling",
+        "state": {
+          "off": "Uit",
+          "cooling": "Koelen",
+          "heating": "Verwarmen",
+          "heating_auxiliary": "Standkachel",
+          "ventilation": "Ventileren",
+          "completed": "Voltooid"
+        }
+      },
+      "air_conditioning_target_temperature": {
+        "name": "Doeltemperatuur klimaat"
+      },
+      "air_conditioning_target_reached_at": {
+        "name": "Klimaat op temperatuur om"
+      },
+      "auxiliary_heating_state": {
+        "name": "Standkachel",
+        "state": {
+          "heating": "Verwarmen",
+          "ventilation": "Ventileren",
+          "off": "Uit",
+          "preheating": "Voorverwarmen",
+          "heating_auxiliary": "Standkachel"
+        }
+      },
+      "auxiliary_heating_mode": {
+        "name": "Standkachel-modus",
+        "state": {
+          "heating": "Verwarmen",
+          "ventilation": "Ventileren"
+        }
+      },
+      "auxiliary_heating_duration": {
+        "name": "Standkachel-duur"
+      },
+      "auxiliary_heating_target_temperature": {
+        "name": "Doeltemperatuur standkachel"
+      },
+      "auxiliary_heating_target_reached_at": {
+        "name": "Standkachel klaar om"
+      },
+      "ventilation_state": {
+        "name": "Ventilatie",
+        "state": {
+          "ventilation": "Ventileren",
+          "preheating": "Voorverwarmen",
+          "off": "Uit"
+        }
+      },
+      "ventilation_duration": {
+        "name": "Ventilatieduur"
+      },
+      "battery_level": {
+        "name": "Accu"
+      },
+      "charging_state": {
+        "name": "Laadstatus",
+        "state": {
+          "connect_cable": "Sluit kabel aan",
+          "charging": "Laden",
+          "conserving": "Behouden",
+          "ready_for_charging": "Klaar om te laden",
+          "discharging": "Ontladen",
+          "charging_interrupted": "Laden onderbroken"
+        }
+      },
+      "charge_type": {
+        "name": "Laadtype",
+        "state": {
+          "ac": "AC",
+          "dc": "DC",
+          "off": "Uit"
+        }
+      },
+      "charging_power": {
+        "name": "Laadvermogen"
+      },
+      "charging_rate": {
+        "name": "Laadsnelheid"
+      },
+      "fully_charged_at": {
+        "name": "Volledig geladen om"
+      },
+      "charge_remaining_time": {
+        "name": "Resterende laadtijd"
+      },
+      "plug_state": {
+        "name": "Stekker",
+        "state": {
+          "connected": "Aangesloten",
+          "disconnected": "Losgekoppeld"
+        }
+      },
+      "charge_limit": {
+        "name": "Laadlimiet"
+      },
+      "charge_mode": {
+        "name": "Laadmodus",
+        "state": {
+          "manual": "Handmatig",
+          "timer": "Timer",
+          "timer_charging_with_climatisation": "Timer met klimaat",
+          "preferred_charging_times": "Voorkeurstijden",
+          "only_own_current": "Alleen eigen stroom",
+          "immediate_discharging": "Direct ontladen",
+          "home_storage_charging": "Thuisopslag"
+        }
+      },
+      "max_charge_current": {
+        "name": "Max. AC-laadstroom"
+      },
+      "license_plate": {
+        "name": "Kenteken"
+      },
+      "last_captured": {
+        "name": "Laatste update van auto"
+      },
+      "rate_limit_remaining": {
+        "name": "Resterende API-verzoeken"
+      },
+      "api_key_expires": {
+        "name": "API-sleutel verloopt"
+      },
+      "api_errors": {
+        "name": "API-meldingen ontbrekende data"
+      }
+    },
+    "binary_sensor": {
+      "lock": {
+        "name": "Slot"
+      },
+      "doors": {
+        "name": "Deuren"
+      },
+      "windows": {
+        "name": "Ramen"
+      },
+      "trunk": {
+        "name": "Kofferbak"
+      },
+      "bonnet": {
+        "name": "Motorkap"
+      },
+      "sunroof": {
+        "name": "Schuifdak"
+      },
+      "lights": {
+        "name": "Verlichting"
+      },
+      "parked": {
+        "name": "Geparkeerd"
+      },
+      "window_heating_front": {
+        "name": "Voorruitverwarming"
+      },
+      "window_heating_rear": {
+        "name": "Achterruitverwarming"
+      },
+      "window_heating_enabled": {
+        "name": "Ruitverwarming bij klimaat"
+      },
+      "air_conditioning_at_unlock": {
+        "name": "Klimaat bij ontgrendelen"
+      },
+      "air_conditioning_without_external_power": {
+        "name": "Klimaat zonder netstroom"
+      },
+      "charging": {
+        "name": "Laden"
+      },
+      "plug_connected": {
+        "name": "Stekker aangesloten"
+      },
+      "at_saved_location": {
+        "name": "Op opgeslagen laadlocatie"
+      }
+    },
+    "button": {
+      "refresh": {
+        "name": "Gegevens verversen"
+      },
+      "start_air_conditioning": {
+        "name": "Klimaatregeling starten"
+      },
+      "stop_air_conditioning": {
+        "name": "Klimaatregeling stoppen"
+      },
+      "start_auxiliary_heating": {
+        "name": "Standkachel starten"
+      },
+      "start_auxiliary_ventilation": {
+        "name": "Standventilatie starten"
+      },
+      "stop_auxiliary_heating": {
+        "name": "Standkachel stoppen"
+      },
+      "start_ventilation": {
+        "name": "Ventilatie starten"
+      },
+      "stop_ventilation": {
+        "name": "Ventilatie stoppen"
+      },
+      "start_charging": {
+        "name": "Laden starten"
+      },
+      "stop_charging": {
+        "name": "Laden stoppen"
+      }
+    },
+    "device_tracker": {
+      "position": {
+        "name": "Positie"
+      }
+    }
+  },
+  "exceptions": {
+    "spin_required": {
+      "message": "Vul je S-PIN in bij de opties van de integratie om de standkachel te gebruiken."
+    },
+    "rate_limited": {
+      "message": "Het API-tegoed voor dit uur is op; probeer het later opnieuw."
+    },
+    "command_failed": {
+      "message": "De auto accepteerde de opdracht niet: {error}"
+    }
+  }
+}
